@@ -1,6 +1,6 @@
 // @flow
 
-import React from 'react'
+import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 
 type Props = {
@@ -35,7 +35,7 @@ type State = {
   delta: number,
 }
 
-export default class Swipe extends React.Component<Props, State> {
+export default class Swipe extends Component<Props, State> {
   moveStart: PropTypes.func
   move: PropTypes.func
   moveEnd: PropTypes.func
@@ -58,8 +58,8 @@ export default class Swipe extends React.Component<Props, State> {
     onTransitionEnd: () => {},
   }
 
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
 
     this.state = {
       x: 0,
